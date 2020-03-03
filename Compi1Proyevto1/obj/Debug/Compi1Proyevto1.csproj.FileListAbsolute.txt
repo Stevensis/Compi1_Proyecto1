@@ -1,0 +1,9 @@
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\bin\Debug\Compi1Proyevto1.exe.config
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\bin\Debug\Compi1Proyevto1.exe
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\bin\Debug\Compi1Proyevto1.pdb
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.csprojAssemblyReference.cache
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.Properties.Resources.resources
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.csproj.GenerateResource.cache
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.exe
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.pdb
+C:\Users\Steven Sis\source\repos\Compi1Proyevto1\Compi1Proyevto1\obj\Debug\Compi1Proyevto1.Form.resources
