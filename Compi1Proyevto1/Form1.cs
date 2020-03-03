@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Compi1Proyevto1.Manejador;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 namespace Compi1Proyevto1
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        Tabs tab;
         public Form()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace Compi1Proyevto1
             Menu.Width = 158;
             pictureBox1.Width = 158;
             btnRestore.Visible = false;
+            tab = new Tabs(this.tabControl1);
         }
         //El menu bar se activara siempre se le haga click
         private void btnSlide_Click(object sender, EventArgs e)
@@ -79,6 +82,11 @@ namespace Compi1Proyevto1
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnNuevaV_Click(object sender, EventArgs e)
+        {
+            tab.New("Nueva Pestaña", "", "");
         }
     }
 }
