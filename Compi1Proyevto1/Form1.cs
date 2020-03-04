@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Compi1Proyevto1.Manejador;
+using Compi1Proyevto1.Archivos;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+
 namespace Compi1Proyevto1
 {
     public partial class Form : System.Windows.Forms.Form
     {
         Tabs tab;
+        Open open;
         public Form()
         {
             InitializeComponent();
@@ -22,6 +26,7 @@ namespace Compi1Proyevto1
             pictureBox1.Width = 158;
             btnRestore.Visible = false;
             tab = new Tabs(this.tabControl1);
+            open = new Open();
         }
         //El menu bar se activara siempre se le haga click
         private void btnSlide_Click(object sender, EventArgs e)
@@ -66,7 +71,7 @@ namespace Compi1Proyevto1
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        //Ayuda que se pueda seleccionar y mover la ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -86,7 +91,28 @@ namespace Compi1Proyevto1
 
         private void btnNuevaV_Click(object sender, EventArgs e)
         {
+            //Como es una nueva pestaña, no tendra ninguna ruta, ni contenido, solo un nombre indicando que esera una nueva pestaña
             tab.New("Nueva Pestaña", "", "");
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            if (OpenFile.ShowDialog()== DialogResult.OK)
+            {
+                try
+                {
+                    //Path.GetFileNameWithoutExtension es para que solo devuelva el nombre del archivo, //Filename es para la ruta completa del archivo
+                    tab.New(Path.GetFileNameWithoutExtension(OpenFile.FileName),open.LeerA(OpenFile), OpenFile.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al cargar Archivo");
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }

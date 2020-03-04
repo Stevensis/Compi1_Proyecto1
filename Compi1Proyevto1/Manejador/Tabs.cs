@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,14 @@ namespace Compi1Proyevto1.Manejador
             RichTextBox areT = new RichTextBox();  //Crea un nuevo espacio de texto
             areT.Name = "ATP"; //+ NuevaPestaña.Name;  //Asigna nombre al espacio de texto para identificarlo
             areT.Size = new System.Drawing.Size(372, 390); //Asignamos un tamaño al RichTextBox
-            areT.Text = Contenido;
-
+            areT.Text = Contenido; //Aigna el contenido que le mandamos al instanciar el metodo
+            areT.Font = new Font("Arial", 9, FontStyle.Regular); //En este proyecto el font de las pestañas sera distinto al del texto en el Rich Text Box
+            tabControlP.Refresh();
             NuevaPestaña.Controls.Add(areT); //Añade un area de texto a la pagina
 
             tabControlP.TabPages.Add(NuevaPestaña); //cargamos la pestaña en el control
 
-            ContadorPestañas++; //variable que lleva el control de la cantidad de pestaña creada
+            
 
             tabControlP.SelectedTab = NuevaPestaña; //seleccionamos la pestaña
         }
@@ -41,6 +43,7 @@ namespace Compi1Proyevto1.Manejador
             {
                 return "";
             }
+            ContadorPestañas++; //variable que lleva el control de la cantidad de pestaña creada
             return " " + ContadorPestañas;
         }
         //Verifica si es una carga de archivo o una nueva pestaña para poder poner el name que identifica a la pestaña
