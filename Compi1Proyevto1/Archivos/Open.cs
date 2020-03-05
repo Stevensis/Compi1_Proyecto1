@@ -46,7 +46,6 @@ namespace Compi1Proyevto1.Archivos
                 }
                 else
                 {
-                    File.Delete(ruta);
                     StreamWriter escrito = File.CreateText(ruta);
                     escrito.Write(contenido);
                     escrito.Flush();

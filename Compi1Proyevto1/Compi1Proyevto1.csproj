@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archivos\Open.cs" />
+    <Compile Include="Archivos\xml.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +55,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Manejador\Tabs.cs" />
+    <Compile Include="Modelos\Error.cs" />
+    <Compile Include="Modelos\Token.cs" />
+    <Compile Include="Procesos\AnalizadorLexico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -45,6 +45,8 @@
             this.btnAnalizar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.OpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.SaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -100,6 +102,7 @@
             this.btnGuardarC.TabIndex = 3;
             this.btnGuardarC.Text = "Guardar Como";
             this.btnGuardarC.UseVisualStyleBackColor = true;
+            this.btnGuardarC.Click += new System.EventHandler(this.btnGuardarC_Click);
             // 
             // btnGuardar
             // 
@@ -115,6 +118,7 @@
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnAbrir
             // 
@@ -224,6 +228,7 @@
             // PanelContenedor
             // 
             this.PanelContenedor.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PanelContenedor.Controls.Add(this.richTextBox1);
             this.PanelContenedor.Controls.Add(this.btnAnalizar);
             this.PanelContenedor.Controls.Add(this.tabControl1);
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -247,6 +252,7 @@
             this.btnAnalizar.TabIndex = 2;
             this.btnAnalizar.Text = "Analizar";
             this.btnAnalizar.UseVisualStyleBackColor = true;
+            this.btnAnalizar.Click += new System.EventHandler(this.btnAnalizar_Click);
             // 
             // tabControl1
             // 
@@ -263,6 +269,18 @@
             this.OpenFile.FileName = "OpenFile";
             this.OpenFile.Filter = "Archivos ER (*.ER)|*.ER";
             this.OpenFile.Title = "Archivo a Analizar";
+            // 
+            // SaveFile
+            // 
+            this.SaveFile.Filter = "Archivos ER (*.ER)|*.ER";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(570, 31);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(452, 496);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
             // 
             // Form
             // 
@@ -308,6 +326,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnAnalizar;
         private System.Windows.Forms.OpenFileDialog OpenFile;
+        private System.Windows.Forms.SaveFileDialog SaveFile;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

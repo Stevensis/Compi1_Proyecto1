@@ -11,6 +11,8 @@ using Compi1Proyevto1.Archivos;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
+using Compi1Proyevto1.Procesos;
+using Compi1Proyevto1.Modelos;
 
 namespace Compi1Proyevto1
 {
@@ -18,6 +20,9 @@ namespace Compi1Proyevto1
     {
         Tabs tab;
         Open open;
+        xml xml;
+        LinkedList<Token> ListaTk;
+        LinkedList<Error> ListaErr;
         public Form()
         {
             InitializeComponent();
@@ -27,6 +32,7 @@ namespace Compi1Proyevto1
             btnRestore.Visible = false;
             tab = new Tabs(this.tabControl1);
             open = new Open();
+            xml = new xml();
         }
         //El menu bar se activara siempre se le haga click
         private void btnSlide_Click(object sender, EventArgs e)
@@ -112,6 +118,74 @@ namespace Compi1Proyevto1
             else
             {
 
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab != null) //Se se presiona ok y hay una pestaña activa
+            {
+                String rutaGA = tabControl1.SelectedTab.Name;//Ruta del archivo (El name del tab contiene la ruta del archivo)
+                //Si es una prestaña nueva, el nombre comenzara con la letra P
+                if (rutaGA.ElementAt(0)!='P')
+                {
+                    open.GuardarC(rutaGA, tab.searchTxt());
+                    MessageBox.Show("Guardado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Primero tiene que presionar en Guardar Como");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No hay prestaña abierta");
+            }
+        }
+
+        private void btnGuardarC_Click(object sender, EventArgs e)
+        {
+            if (SaveFile.ShowDialog() == DialogResult.OK && tabControl1.SelectedTab != null) //Se se presiona ok y hay una pestaña activa
+            {
+                String rutaGA = SaveFile.FileName;//Ruta del archivo
+                if (open.GuardarC(rutaGA, tab.searchTxt()))
+                {
+                    tabControl1.SelectedTab.Text = Path.GetFileNameWithoutExtension(SaveFile.FileName); 
+                    tabControl1.SelectedTab.Name = SaveFile.FileName;
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar el archivo");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No hay prestaña abierta");
+            }
+        }
+
+        private void btnAnalizar_Click(object sender, EventArgs e)
+        {
+            AnalizadorLexico analizadorLexico = new AnalizadorLexico();
+            ListaTk = analizadorLexico.analizar(tab.searchTxt()); //Optenemos la lista de tokens
+            ListaErr = analizadorLexico.getListErr(); //Optenemos la lista de erros
+            if (ListaErr.Count==0) //En dado caso la lista de errores este vacia, podremos imprimir la lista de tokens 
+            {
+                foreach (var item in ListaTk)
+                {
+                    Console.WriteLine(item.Valor + " Tipo: "+item.getTipo()+" C:"+item.Columna+" F:"+item.Fila);
+                }
+                xml.Tokens(ListaTk);
+            }
+            else //de lo contrario imprimeremos la lista de errores
+            {
+                foreach (var item in ListaErr)
+                {
+                    Console.WriteLine(item.Valor + " Tipo: " + item.Descripcion + " C:" + item.Columna + " F" + item.Fila);
+                }
+                xml.Errores(ListaErr);
             }
         }
     }

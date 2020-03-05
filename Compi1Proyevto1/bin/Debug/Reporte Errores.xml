@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ListaErrores>
+   <Error>
+       <descripcion>Caracter Desconocido</descripcion>
+       <Valor>°</Valor>
+       <Fila>36</Fila>
+       <Columna>13</Columna>
+   </Error>
+</ListaErrores>
