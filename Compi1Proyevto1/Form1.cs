@@ -173,18 +173,21 @@ namespace Compi1Proyevto1
             ListaErr = analizadorLexico.getListErr(); //Optenemos la lista de erros
             if (ListaErr.Count==0) //En dado caso la lista de errores este vacia, podremos imprimir la lista de tokens 
             {
-                foreach (var item in ListaTk)
-                {
-                    Console.WriteLine(item.Valor + " Tipo: "+item.getTipo()+" C:"+item.Columna+" F:"+item.Fila);
-                }
                 xml.Tokens(ListaTk);
+                AnalizarTokens analizarTK = new AnalizarTokens(ListaTk);
+                analizarTK.analizarTokens();
+                foreach (var item in analizarTK.LstConjunto)
+                {
+                    String printC = "";
+                    foreach (var aasd in item.Conjuntoo)
+                    {
+                        printC += aasd+",";
+                    }
+                    richTextBox1.Text+= ("ID: "+item.Id+" Conjunto: "+printC+"\n");
+                }
             }
             else //de lo contrario imprimeremos la lista de errores
             {
-                foreach (var item in ListaErr)
-                {
-                    Console.WriteLine(item.Valor + " Tipo: " + item.Descripcion + " C:" + item.Columna + " F" + item.Fila);
-                }
                 xml.Errores(ListaErr);
             }
         }
