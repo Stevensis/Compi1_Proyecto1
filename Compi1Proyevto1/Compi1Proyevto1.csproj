@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos\Graficador.cs" />
     <Compile Include="Archivos\Open.cs" />
     <Compile Include="Archivos\xml.cs" />
     <Compile Include="Form1.cs">
@@ -55,11 +56,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Manejador\Tabs.cs" />
+    <Compile Include="Modelos\AFN.cs" />
     <Compile Include="Modelos\Conjunto.cs" />
     <Compile Include="Modelos\Error.cs" />
     <Compile Include="Modelos\Token.cs" />
+    <Compile Include="Modelos\Transicion.cs" />
     <Compile Include="Procesos\AnalizadorLexico.cs" />
     <Compile Include="Procesos\AnalizarTokens.cs" />
+    <Compile Include="Procesos\Thompson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -11,6 +11,7 @@ namespace Compi1Proyevto1.Procesos
     {
         private LinkedList<Token> listaTokens;
         private List<Conjunto> lstConjunto = new List<Conjunto>();
+        private List<Thompson> lstThompson = new List<Thompson>();
 
         public AnalizarTokens(LinkedList<Token> listaTokens)
         {
@@ -18,6 +19,7 @@ namespace Compi1Proyevto1.Procesos
         }
 
         public List<Conjunto> LstConjunto { get => lstConjunto; set => lstConjunto = value; } //Contendra la lista de conjuntos con su respectico ID
+        public List<Thompson> LstThompson { get => lstThompson; set => lstThompson = value; }
 
         public void analizarTokens() {
             for (int i = 0; i < listaTokens.Count; i++)
@@ -61,57 +63,31 @@ namespace Compi1Proyevto1.Procesos
                             lstConjunto.Add(conjunto);
                         }
                         break;
-                    case Token.Tipo.CADENA:
-                        break;
-                    case Token.Tipo.COMENTARIO_L:
-                        break;
-                    case Token.Tipo.COMENTARIO_ML:
-                        break;
-                    case Token.Tipo.LLAVE_IZ:
-                        break;
-                    case Token.Tipo.LLAVE_DE:
-                        break;
-                    case Token.Tipo.PUNTO_Y_C:
-                        break;
-                    case Token.Tipo.COMILLAS:
-                        break;
-                    case Token.Tipo.PORCENTAJE:
-                        break;
+                    
                     case Token.Tipo.ID:
-                        break;
-                    case Token.Tipo.NUMERO_ENTERO:
-                        break;
-                    case Token.Tipo.LETRA:
-                        break;
-                    case Token.Tipo.DIAGONAL:
-                        break;
-                    case Token.Tipo.MENORQUE:
-                        break;
-                    case Token.Tipo.EXCLAMACION:
-                        break;
-                    case Token.Tipo.MAYORQUE:
-                        break;
-                    case Token.Tipo.MENOS:
-                        break;
-                    case Token.Tipo.EQUIVALENCIA:
-                        break;
-                    case Token.Tipo.ASTERISCO:
-                        break;
-                    case Token.Tipo.COMA:
-                        break;
-                    case Token.Tipo.BARRA_V:
-                        break;
-                    case Token.Tipo.PUNTO:
-                        break;
-                    case Token.Tipo.MAS:
-                        break;
-                    case Token.Tipo.INTERROGACION_DE:
-                        break;
-                    case Token.Tipo.DOS_PUNTOS:
-                        break;
-                    case Token.Tipo.SIGNO:
-                        break;
-                    case Token.Tipo.NUMERAL:
+                        String nameEr = listaTokens.ElementAt(i).Valor;
+                        i++;
+                        if (listaTokens.ElementAt(i).TipoToken== Token.Tipo.MENOS)
+                        {
+                            List<Token> er = new List<Token>();
+                            i++;
+                            i++;
+                            do
+                            {
+                                if (listaTokens.ElementAt(i).TipoToken != Token.Tipo.LLAVE_IZ && listaTokens.ElementAt(i).TipoToken != Token.Tipo.LLAVE_DE)
+                                {
+                                    er.Add(listaTokens.ElementAt(i));
+                                    i++;
+                                }
+                                else
+                                {
+                                    i++;
+                                }
+                                
+                            } while (listaTokens.ElementAt(i).TipoToken != Token.Tipo.PUNTO_Y_C);
+                            Thompson thompson = new Thompson(er,nameEr);
+                            lstThompson.Add(thompson);
+                        }
                         break;
                     default:
                         break;

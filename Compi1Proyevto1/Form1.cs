@@ -185,6 +185,14 @@ namespace Compi1Proyevto1
                     }
                     richTextBox1.Text+= ("ID: "+item.Id+" Conjunto: "+printC+"\n");
                 }
+
+                foreach (var item in analizarTK.LstThompson)
+                {
+                    richTextBox1.Text += "La expresion: " + item.NameEr + "Tiene las transiciones: \n" + item.Raiz.Display();
+                    Graficador graficador = new Graficador();
+                    graficador.graficar(item.Raiz.dot(),item.NameEr);
+                }
+
             }
             else //de lo contrario imprimeremos la lista de errores
             {
