@@ -37,7 +37,8 @@ namespace Compi1Proyevto1.Modelos
             INTERROGACION_DE,
             DOS_PUNTOS,
             SIGNO,
-            NUMERAL
+            NUMERAL,
+            EPSILON
         }
         private Tipo tipoToken;
         private String valor; //El Contenido del token
@@ -107,9 +108,11 @@ namespace Compi1Proyevto1.Modelos
                     return "SIGNO";
                 case Tipo.NUMERO_ENTERO:
                     return "NUMERO_ENTERO";
+                case Tipo.EPSILON:
+                    return "EPSILON";
                 default:
                     return "";
-
+                
             }
 
         }

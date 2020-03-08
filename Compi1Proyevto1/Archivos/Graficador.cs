@@ -20,8 +20,6 @@ namespace Compi1Proyevto1.Archivos
 
         public void generadorDot(String rutaDot, String rutaImagen)
         {
-            do
-            {
                 System.IO.File.WriteAllText(rutaDot, grafo.ToString());
                 String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
                 var comando = string.Format(comandoDot);
@@ -30,7 +28,6 @@ namespace Compi1Proyevto1.Archivos
                 proc.StartInfo = procStart;
                 proc.Start();
                 proc.WaitForExit();
-            } while (!File.Exists(rutaImagen));
             
         }
         //contenido contiene las lineas

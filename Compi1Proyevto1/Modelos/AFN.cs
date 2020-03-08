@@ -27,6 +27,13 @@ namespace Compi1Proyevto1.Modelos
             this.transiciones.Add(new Transicion(0,1,Tk));
         }
 
+        public AFN(int size) {
+            this.Estados = new List<int>();
+            this.transiciones = new List<Transicion>();
+            this.estadoFinal = 0;
+            this.setStateSize(size);
+        }
+
         public void setStateSize(int size)
         {
             for (int i = 0; i < size; i++)
@@ -45,7 +52,7 @@ namespace Compi1Proyevto1.Modelos
         public string dot()
         {
             String cadena = "";
-            cadena+= "size =\"4,4\";\n";
+            cadena+= "size =\"10\";\n";
             cadena += "rankdir=LR;";
             foreach (var item in transiciones)
             {
