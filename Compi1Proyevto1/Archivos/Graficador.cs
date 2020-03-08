@@ -20,14 +20,18 @@ namespace Compi1Proyevto1.Archivos
 
         public void generadorDot(String rutaDot, String rutaImagen)
         {
-            System.IO.File.WriteAllText(rutaDot, grafo.ToString());
-            String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
-            var comando = string.Format(comandoDot);
-            var procStart = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
-            var proc = new System.Diagnostics.Process();
-            proc.StartInfo = procStart;
-            proc.Start();
-            proc.WaitForExit();
+            do
+            {
+                System.IO.File.WriteAllText(rutaDot, grafo.ToString());
+                String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
+                var comando = string.Format(comandoDot);
+                var procStart = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
+                var proc = new System.Diagnostics.Process();
+                proc.StartInfo = procStart;
+                proc.Start();
+                proc.WaitForExit();
+            } while (!File.Exists(rutaImagen));
+            
         }
         //contenido contiene las lineas
         public void graficar(String contenido, String name)
@@ -35,7 +39,7 @@ namespace Compi1Proyevto1.Archivos
             grafo = new StringBuilder();
             String rutaDot = ruta + "\\"+name+".dot";
             String rutaImagen = ruta + "\\" + name + ".png";
-            rutaImagen = rtImagen;
+            rtImagen = rutaImagen;
             grafo.Append("digraph G { ");
             grafo.Append(contenido);
             grafo.Append("}");
