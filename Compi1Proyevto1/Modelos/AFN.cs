@@ -52,15 +52,12 @@ namespace Compi1Proyevto1.Modelos
         public string dot()
         {
             String cadena = "";
-            cadena+= "size =\"10\";\n";
+            cadena+= "size =\"30\";\n";
             cadena += "rankdir=LR;";
             foreach (var item in transiciones)
             {
-                if (item.Trans_symbol.Valor.Equals("|") || item.Trans_symbol.Valor.Equals(">") || item.Trans_symbol.Valor.Equals("<") || item.Trans_symbol.Valor.Equals("{") || item.Trans_symbol.Valor.Equals("}"))
-                {
-
-                }
-                cadena += item.State_from + " -> "+ item.State_to + " [label=\""+ item.Trans_symbol.Valor +" \"];" + "\n";
+               
+                cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ item.Trans_symbol.Valor + "\\\"\"];" + "\n";
             }
             return cadena;
         }

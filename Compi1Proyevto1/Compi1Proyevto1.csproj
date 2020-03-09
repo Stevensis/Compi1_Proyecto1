@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos\Gra.cs" />
     <Compile Include="Archivos\Graficador.cs" />
     <Compile Include="Archivos\Open.cs" />
     <Compile Include="Archivos\xml.cs" />

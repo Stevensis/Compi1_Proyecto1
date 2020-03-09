@@ -42,11 +42,11 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnAnalizar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.OpenFile = new System.Windows.Forms.OpenFileDialog();
             this.SaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -237,6 +237,14 @@
             this.PanelContenedor.Size = new System.Drawing.Size(1049, 951);
             this.PanelContenedor.TabIndex = 2;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(570, 31);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(452, 496);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
             // btnAnalizar
             // 
             this.btnAnalizar.FlatAppearance.BorderSize = 0;
@@ -258,7 +266,6 @@
             // 
             this.tabControl1.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(25, 17);
-            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(506, 510);
@@ -273,14 +280,6 @@
             // SaveFile
             // 
             this.SaveFile.Filter = "Archivos ER (*.ER)|*.ER";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(570, 31);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(452, 496);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
             // 
             // Form
             // 

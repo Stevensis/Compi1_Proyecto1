@@ -1,0 +1,4 @@
+digraph G { size ="30";
+rankdir=LR;0 -> 1 [label="\"letra\""];
+1 -> 2 [label="\"letra\""];
+}

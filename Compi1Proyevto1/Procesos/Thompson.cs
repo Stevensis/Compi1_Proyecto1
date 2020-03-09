@@ -50,8 +50,8 @@ namespace Compi1Proyevto1.Procesos
                 case Token.Tipo.MAS: //Operacion +
                     i++;
                     AFN nMas = create(); //Optenemos a
-                    AFN nMasWithKleend = AFNKleene(nMas); //Optenemos a*
-                    AFN resultadoMas = AFNConcat(nMasWithKleend,nMas); //Optenemos .a*a
+                    AFN nMasWithKleend = AFNKleene(nMas); //Optenemos *a
+                    AFN resultadoMas = AFNConcat(nMas,nMasWithKleend); //Optenemos .a*a
                     return resultadoMas;
                     break;
                 case Token.Tipo.INTERROGACION_DE: //Operacion ?
