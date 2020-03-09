@@ -26,7 +26,7 @@ namespace Compi1Proyevto1.Modelos
             this.estadoFinal = 1;
             this.transiciones.Add(new Transicion(0,1,Tk));
         }
-
+        //Crea un AFN con un tamaño de estados producto de la union de 2 AFN 
         public AFN(int size) {
             this.Estados = new List<int>();
             this.transiciones = new List<Transicion>();
@@ -48,7 +48,7 @@ namespace Compi1Proyevto1.Modelos
             }
             return cadena;
         }
-
+        //Metodo que crea el dot que contendra el AFN retornara el cuerpo del dot que sea distinto a digraph G { }
         public string dot()
         {
             String cadena = "";
@@ -56,6 +56,10 @@ namespace Compi1Proyevto1.Modelos
             cadena += "rankdir=LR;";
             foreach (var item in transiciones)
             {
+                if (item.Trans_symbol.Valor.Equals("|") || item.Trans_symbol.Valor.Equals(">") || item.Trans_symbol.Valor.Equals("<") || item.Trans_symbol.Valor.Equals("{") || item.Trans_symbol.Valor.Equals("}"))
+                {
+
+                }
                 cadena += item.State_from + " -> "+ item.State_to + " [label=\""+ item.Trans_symbol.Valor +" \"];" + "\n";
             }
             return cadena;

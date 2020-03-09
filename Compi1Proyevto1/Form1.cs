@@ -30,7 +30,7 @@ namespace Compi1Proyevto1
             Menu.Width = 158;
             pictureBox1.Width = 158;
             btnRestore.Visible = false;
-            tab = new Tabs(this.tabControl1);
+            tab = new Tabs(this.tabControl1); //La clasa tab utlizara el tab control de este panel
             open = new Open();
             xml = new xml();
         }
@@ -190,7 +190,8 @@ namespace Compi1Proyevto1
                 {
                     richTextBox1.Text += "La expresion: " + item.NameEr + "Tiene las transiciones: \n" + item.Raiz.Display();
                     Graficador graficador = new Graficador();
-                    graficador.graficar(item.Raiz.dot(),item.NameEr);
+                    graficador.graficar(item.Raiz.dot(),item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
+                    graficador.abrirGrafo();
                 }
 
             }

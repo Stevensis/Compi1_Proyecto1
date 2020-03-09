@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,29 +19,33 @@ namespace Compi1Proyevto1.Archivos
             ruta = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory); //Obtiene la ruta del escritorio
         }
 
-        public void generadorDot(String rutaDot, String rutaImagen)
+        public void generadorDot(String name, String rutaImagen)
         {
-                System.IO.File.WriteAllText(rutaDot, grafo.ToString());
-                String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
-                var comando = string.Format(comandoDot);
-                var procStart = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
-                var proc = new System.Diagnostics.Process();
-                proc.StartInfo = procStart;
-                proc.Start();
-                proc.WaitForExit();
+                System.IO.File.WriteAllText(name+".dot", grafo.ToString());
+            ProcessStartInfo startInfo = new ProcessStartInfo("dot.exe ");
+            startInfo.Arguments = "-Tpng "+name+".dot -o "+name +".png ";
+            Process.Start(startInfo).WaitForExit();
             
+            //   String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
+            //    var comando = string.Format(comandoDot);
+            //    var procStart = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
+            //   var proc = new System.Diagnostics.Process();
+            //    proc.StartInfo = procStart;
+            //   proc.Start();
+            //     proc.WaitForExit();       
         }
         //contenido contiene las lineas
         public void graficar(String contenido, String name)
         {
             grafo = new StringBuilder();
-            String rutaDot = ruta + "\\"+name+".dot";
-            String rutaImagen = ruta + "\\" + name + ".png";
-            rtImagen = rutaImagen;
+            //   String rutaDot = "\\"+name+".dot";
+            //   String rutaImagen = ruta + "\\" + name + ".png";
+            //  rtImagen = rutaImagen;
+            rtImagen = name+".png";
             grafo.Append("digraph G { ");
             grafo.Append(contenido);
             grafo.Append("}");
-            this.generadorDot(rutaDot, rutaImagen);
+            this.generadorDot(name, "");
 
         }
 

@@ -11,8 +11,8 @@ namespace Compi1Proyevto1.Procesos
     {
         int i=0;
         List<Token> er;
-        String nameEr;
-        AFN raiz;
+        String nameEr; //Nombre de la expresion regular
+        AFN raiz; //Contendra el AFN Final (que sera una lista de transiciones)
         Stack<AFN> operadores = new Stack<AFN>();
         public Thompson(List<Token> er, string nameEr)
         {
@@ -27,38 +27,47 @@ namespace Compi1Proyevto1.Procesos
         public AFN create() {
             switch (er.ElementAt(i).TipoToken)
             {
-                case Token.Tipo.PUNTO:
+                case Token.Tipo.PUNTO: //Operacion .
                     i++;
                     AFN n = create(); //esperamos el primer tramo de mini AFN
                     AFN m = create(); //esperamos el segundo tramo de mini AFN con el que queremos concatenar
-                    m.Estados.Remove(0); //removemos el primer estado de el segundo tramo
-                    foreach (var item in m.Transiciones)
-                    {
-                        n.Transiciones.Add(new Transicion(item.State_from+n.Estados.Count()-1,item.State_to+n.Estados.Count()-1,item.Trans_symbol));
-                    }
-                    foreach (var item in m.Estados)
-                    {
-                        n.Estados.Add(item + n.Estados.Count() + 1);
-                    }
-                    n.EstadoFinal = n.Estados.Count() + m.Estados.Count() - 2;
-                    return n;
+                    AFN resultadoConcat = AFNConcat(n,m);
+                    return resultadoConcat;
                     break;
-                case Token.Tipo.BARRA_V:
+                case Token.Tipo.BARRA_V: // Operacion |
                     i++;
                     AFN nOr = create(); //esperamos el primer tramo de mini AFN
                     AFN mOr = create(); //esperamos el segundo tramo de mini AFN con el que queremos hacer la union
                     AFN resultado = AFNUnion(nOr,mOr);
                     return resultado;
                     break;
-                case Token.Tipo.CADENA:
-                    AFN afnCadena = new AFN(er.ElementAt(i)); //Se crea un mini AFN de 2 estados, inicio y final y es alcansable con el terminal CADENA
+                case Token.Tipo.ASTERISCO: // Operacion *
                     i++;
+                    AFN nKleene = create();
+                    AFN resultadoK = AFNKleene(nKleene);
+                    return resultadoK;
+                    break;
+                case Token.Tipo.MAS: //Operacion +
+                    i++;
+                    AFN nMas = create(); //Optenemos a
+                    AFN nMasWithKleend = AFNKleene(nMas); //Optenemos a*
+                    AFN resultadoMas = AFNConcat(nMasWithKleend,nMas); //Optenemos .a*a
+                    return resultadoMas;
+                    break;
+                case Token.Tipo.INTERROGACION_DE: //Operacion ?
+                    i++;
+                    AFN nInterogacion = create(); //Optenemos a
+                    AFN nEpsilon = AFNTerminal(new Token(Token.Tipo.EPSILON, "ε", 0,0,0)); //Optenemos ε
+                    AFN resultadoInterrogacion = AFNUnion(nInterogacion,nEpsilon); //Optenemos |aε
+                    return resultadoInterrogacion;
+                    break;
+                case Token.Tipo.CADENA:
+                    AFN afnCadena = AFNTerminal(er.ElementAt(i));
                     return afnCadena;
                     break;
                 case Token.Tipo.ID:
-                    AFN afnId = new AFN(er.ElementAt(i)); //Se crea un mini AFN de 2 estados, inicio y final y es alcansable con el terminal ID
-                    i++;
-                    return afnId;  
+                    AFN afnId = AFNTerminal(er.ElementAt(i));
+                    return afnId;
                     break;
                 default:
                     i++;
@@ -89,6 +98,44 @@ namespace Compi1Proyevto1.Procesos
             result.Transiciones.Add(new Transicion(m.Estados.Count() + n.Estados.Count(), m.Estados.Count() + n.Estados.Count() + 1, new Token(Token.Tipo.EPSILON, "ε", 0, 0, 0))); //Se crea la transicion de m con el estado final
             result.EstadoFinal = n.Estados.Count() + m.Estados.Count() + 1; //Indicamos cual es el estado final
             return result;
+        }
+
+        //Metodo para hacer la cerradura de kleene
+        public AFN AFNKleene(AFN n) {
+            Token token = new Token(Token.Tipo.EPSILON, "ε",0,0,0);
+            //apartir de un mini estado n, se agregaran 2 estados nuevos que se añadiran al inicio y al final saliendo de uno con un Epsilon y llegan al otro un epsilon tambien
+            AFN result = new AFN(n.Estados.Count()+2); //primero crea un nuevo AFN que sera el que se retorne, la cantidad de estados sera igual a la cantidad de estados de n mas dos (que seran los de inico y fin)
+            result.Transiciones.Add(new Transicion(0,1,token)); //Se añade una nueva transicion que sera la transicion de inicio, la cual apunta de 0 a 1 con Epsilon
+
+            foreach (var item in n.Transiciones) //Se recore las transicion de n para reescribirlas en result
+            {
+                result.Transiciones.Add( new Transicion(item.State_from+1,item.State_to+1,item.Trans_symbol)); //cada transicion se correra un valor los estados
+            }
+            result.Transiciones.Add(new Transicion(n.Estados.Count(), n.Estados.Count() + 1, token)); //el final de n apuntara a otro estado con Epsilon
+            result.Transiciones.Add(new Transicion(0, n.Estados.Count() + 1, token)); //El estado 0 apuntara al final del AFN con epsilon
+            result.Transiciones.Add(new Transicion(n.Estados.Count(),1,token)); //el final de n apuntara al inicio de n con Epsilon
+            return result;
+        }
+        //Metodo para hacer la concatenaciond e 2 miniautomatas
+        public AFN AFNConcat(AFN n, AFN m) {
+            m.Estados.Remove(0); //removemos el primer estado de el segundo tramo
+            foreach (var item in m.Transiciones) //Se ara la union de ambos
+            {
+                //Se rescribe las transiciones m en n con la diferencia que las nuevas transiciones que son de m estan corridas un valor su estado
+                n.Transiciones.Add(new Transicion(item.State_from + n.Estados.Count() - 1, item.State_to + n.Estados.Count() - 1, item.Trans_symbol));
+            }
+            foreach (var item in m.Estados)
+            {
+                n.Estados.Add(item + n.Estados.Count() + 1);
+            }
+            n.EstadoFinal = n.Estados.Count() + m.Estados.Count() - 2;
+            return n;
+        }
+        //Retornara un Mini AFN que sera solo de un estado 0 a un estado 1 con un terminal t
+        public AFN AFNTerminal(Token t) {
+            AFN afnCadena = new AFN(t); //Se crea un mini AFN de 2 estados, inicio y final y es alcansable con el terminal CADENA
+            i++;
+            return afnCadena;
         }
     }
 }

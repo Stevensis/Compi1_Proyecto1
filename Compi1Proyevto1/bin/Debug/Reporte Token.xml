@@ -147,10 +147,16 @@
        <Columna>6</Columna>
    </Token>
    <Token>
+       <Nombre>INTERROGACION_DERECHA</Nombre>
+       <Valor>?</Valor>
+       <Fila>10</Fila>
+       <Columna>8</Columna>
+   </Token>
+   <Token>
        <Nombre>PUNTO</Nombre>
        <Valor>.</Valor>
        <Fila>10</Fila>
-       <Columna>8</Columna>
+       <Columna>9</Columna>
    </Token>
    <Token>
        <Nombre>LLAVE_IZQUIERDA</Nombre>
@@ -171,28 +177,16 @@
        <Columna>16</Columna>
    </Token>
    <Token>
-       <Nombre>LLAVE_IZQUIERDA</Nombre>
-       <Valor>{</Valor>
+       <Nombre>CADENA</Nombre>
+       <Valor>a</Valor>
        <Fila>10</Fila>
        <Columna>18</Columna>
-   </Token>
-   <Token>
-       <Nombre>ID</Nombre>
-       <Valor>letra</Valor>
-       <Fila>10</Fila>
-       <Columna>19</Columna>
-   </Token>
-   <Token>
-       <Nombre>LLAVE_DERECHA</Nombre>
-       <Valor>}</Valor>
-       <Fila>10</Fila>
-       <Columna>24</Columna>
    </Token>
    <Token>
        <Nombre>PUNTO_Y_COMA</Nombre>
        <Valor>;</Valor>
        <Fila>10</Fila>
-       <Columna>26</Columna>
+       <Columna>22</Columna>
    </Token>
    <Token>
        <Nombre>ID</Nombre>
