@@ -190,12 +190,12 @@ namespace Compi1Proyevto1
                 foreach (var item in analizarTK.LstThompson)
                 {
                     richTextBox1.Text += "La expresion: " + item.NameEr + "Tiene las transiciones: \n" + item.Raiz.Display();
-                    Graficador graficador = new Graficador();
-                   //* Gra gra = new Gra();
-                   //* gra.graficar(item.Raiz.dot(), item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
-                   //* gra.abrirGrafo();
-                    graficador.graficar(item.Raiz.dot(),item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
-                    graficador.abrirGrafo();
+                     Graficador graficador = new Graficador();
+                    //* Gra gra = new Gra();
+                    //*  gra.graficar(item.Raiz.dot(), item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
+                    //* gra.abrirGrafo();
+                     graficador.graficar(item.Raiz.dot(),item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
+                     graficador.abrirGrafo();
                 }
 
             }
