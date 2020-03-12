@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compi1Proyevto1.Modelos
 {
-    class Transicion
+    class Transicion //TRANSICION DE LOS MINI AFN
     {
         private int state_from, state_to;
         private Token trans_symbol;

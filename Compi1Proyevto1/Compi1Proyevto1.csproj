@@ -60,11 +60,14 @@
     <Compile Include="Modelos\AFN.cs" />
     <Compile Include="Modelos\Conjunto.cs" />
     <Compile Include="Modelos\Error.cs" />
+    <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Token.cs" />
     <Compile Include="Modelos\Transicion.cs" />
+    <Compile Include="Modelos\TransicionEstado.cs" />
     <Compile Include="Procesos\AnalizadorLexico.cs" />
     <Compile Include="Procesos\AnalizarTokens.cs" />
     <Compile Include="Procesos\Thompson.cs" />
+    <Compile Include="Procesos\Transiciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

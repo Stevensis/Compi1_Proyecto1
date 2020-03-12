@@ -11,6 +11,7 @@ namespace Compi1Proyevto1.Procesos
     {
         int i=0;
         List<Token> er;
+        List<Token> terminales = new List<Token>(); //Contendra la lista de terminales de la expresoin regular
         String nameEr; //Nombre de la expresion regular
         AFN raiz; //Contendra el AFN Final (que sera una lista de transiciones)
         Stack<AFN> operadores = new Stack<AFN>();
@@ -23,6 +24,7 @@ namespace Compi1Proyevto1.Procesos
 
         public string NameEr { get => nameEr; set => nameEr = value; }
         public AFN Raiz { get => raiz; set => raiz = value; }
+        internal List<Token> Terminales { get => terminales; set => terminales = value; }
 
         public AFN create() {
             switch (er.ElementAt(i).TipoToken)
@@ -62,10 +64,12 @@ namespace Compi1Proyevto1.Procesos
                     return resultadoInterrogacion;
                     break;
                 case Token.Tipo.CADENA:
+                    insertarTerminal(er.ElementAt(i)); //Para llevar un control de los terminales
                     AFN afnCadena = AFNTerminal(er.ElementAt(i));
                     return afnCadena;
                     break;
                 case Token.Tipo.ID:
+                    insertarTerminal(er.ElementAt(i)); //Para llevar un control de los terminales
                     AFN afnId = AFNTerminal(er.ElementAt(i));
                     return afnId;
                     break;
@@ -137,5 +141,23 @@ namespace Compi1Proyevto1.Procesos
             i++;
             return afnCadena;
         }
+
+        public void insertarTerminal(Token t) {
+            if (terminales.Count() > 0) {
+                foreach (var item in terminales)
+                {
+                    if (item.Valor.Equals(t.Valor))
+                    {
+                        return;
+                    }
+                }
+                terminales.Add(t);
+            }
+            else
+            {
+                terminales.Add(t);
+            }
+        }
     }
+
 }
