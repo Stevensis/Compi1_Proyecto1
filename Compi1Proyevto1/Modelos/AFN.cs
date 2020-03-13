@@ -55,10 +55,12 @@ namespace Compi1Proyevto1.Modelos
             cadena+= "size =\"30\";\n";
             cadena += "rankdir=LR;";
             foreach (var item in transiciones)
-            {
-               
-                cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ item.Trans_symbol.Valor + "\\\"\"];" + "\n";
+             {
+                 cadena += item.State_from + " [shape=\"circle\"]\n";
+                 cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ item.Trans_symbol.Valor + "\\\"\"];" + "\n";
             }
+
+            cadena += estados.Count() - 1 + " [shape=\"doublecircle\"]";
             return cadena;
         }
     }

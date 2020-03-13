@@ -87,11 +87,7 @@ namespace Compi1Proyevto1.Procesos
                             } while (listaTokens.ElementAt(i).TipoToken != Token.Tipo.PUNTO_Y_C);
                             Thompson thompson = new Thompson(er,nameEr);
                             Transiciones transiciones = new Transiciones(thompson);
-                            Console.WriteLine("Cerradura inicial");
-                            foreach (var item in transiciones.CerraduraI1)
-                            {
-                                Console.WriteLine(item);
-                            }
+                            thompson.Transiciones = transiciones;
                             lstThompson.Add(thompson);
                         }
                         break;

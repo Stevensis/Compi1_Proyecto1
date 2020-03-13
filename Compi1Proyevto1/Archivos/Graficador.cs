@@ -25,22 +25,12 @@ namespace Compi1Proyevto1.Archivos
             ProcessStartInfo startInfo = new ProcessStartInfo("dot.exe ");
             startInfo.Arguments = "-Tpng "+name+".dot -o "+name +".png ";
             Process.Start(startInfo).WaitForExit();
-            
-            //   String comandoDot = "dot.exe -Tpng " + rutaDot + " -o " + rutaImagen + " ";
-            //    var comando = string.Format(comandoDot);
-            //    var procStart = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
-            //   var proc = new System.Diagnostics.Process();
-            //    proc.StartInfo = procStart;
-            //   proc.Start();
-            //     proc.WaitForExit();       
+                
         }
         //contenido contiene las lineas
         public void graficar(String contenido, String name)
         {
             grafo = new StringBuilder();
-            //   String rutaDot = "\\"+name+".dot";
-            //   String rutaImagen = ruta + "\\" + name + ".png";
-            //  rtImagen = rutaImagen;
             rtImagen = name+".png";
             grafo.Append("digraph G { ");
             grafo.Append(contenido);

@@ -196,6 +196,10 @@ namespace Compi1Proyevto1
                     //* gra.abrirGrafo();
                      graficador.graficar(item.Raiz.dot(),item.NameEr); //Mandamos el contenido del dot y el nombre que contendra el archivo(sera el mismo de la expresion)
                      graficador.abrirGrafo();
+                     graficador.graficar(item.Transiciones.dot(),item.NameEr+"-table");
+                     graficador.abrirGrafo();
+                    graficador.graficar(item.Transiciones.dotAFD(),item.NameEr+"-AFD");
+                    graficador.abrirGrafo();
                 }
 
             }

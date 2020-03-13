@@ -15,6 +15,7 @@ namespace Compi1Proyevto1.Procesos
         String nameEr; //Nombre de la expresion regular
         AFN raiz; //Contendra el AFN Final (que sera una lista de transiciones)
         Stack<AFN> operadores = new Stack<AFN>();
+        private Transiciones transiciones; //Contendra las transiciones de para el AFD
         public Thompson(List<Token> er, string nameEr)
         {
             this.er = er;
@@ -24,7 +25,8 @@ namespace Compi1Proyevto1.Procesos
 
         public string NameEr { get => nameEr; set => nameEr = value; }
         public AFN Raiz { get => raiz; set => raiz = value; }
-        internal List<Token> Terminales { get => terminales; set => terminales = value; }
+        public List<Token> Terminales { get => terminales; set => terminales = value; }
+        public Transiciones Transiciones { get => transiciones; set => transiciones = value; }
 
         public AFN create() {
             switch (er.ElementAt(i).TipoToken)
