@@ -33,6 +33,7 @@ namespace Compi1Proyevto1
             tab = new Tabs(this.tabControl1); //La clasa tab utlizara el tab control de este panel
             open = new Open();
             xml = new xml();
+           
             
         }
         //El menu bar se activara siempre se le haga click

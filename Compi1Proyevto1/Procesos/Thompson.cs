@@ -62,6 +62,7 @@ namespace Compi1Proyevto1.Procesos
                     i++;
                     AFN nInterogacion = create(); //Optenemos a
                     AFN nEpsilon = AFNTerminal(new Token(Token.Tipo.EPSILON, "ε", 0,0,0)); //Optenemos ε
+                    i--;
                     AFN resultadoInterrogacion = AFNUnion(nInterogacion,nEpsilon); //Optenemos |aε
                     return resultadoInterrogacion;
                     break;
