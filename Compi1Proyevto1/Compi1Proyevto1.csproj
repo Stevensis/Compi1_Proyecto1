@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos\CreatePage.cs" />
     <Compile Include="Archivos\Gra.cs" />
     <Compile Include="Archivos\Graficador.cs" />
     <Compile Include="Archivos\Open.cs" />
@@ -68,8 +69,15 @@
     <Compile Include="Procesos\AnalizarTokens.cs" />
     <Compile Include="Procesos\Thompson.cs" />
     <Compile Include="Procesos\Transiciones.cs" />
+    <Compile Include="Procesos\Validacion_Lexema.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,12 +122,26 @@
   <ItemGroup>
     <None Include="Properties\Usa_Logo2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\columna.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prueba.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prueba %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tabla-de-datos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerebro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerebro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\encuesta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

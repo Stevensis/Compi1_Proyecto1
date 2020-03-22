@@ -12,6 +12,7 @@ namespace Compi1Proyevto1.Procesos
         private LinkedList<Token> listaTokens;
         private List<Conjunto> lstConjunto = new List<Conjunto>();
         private List<Thompson> lstThompson = new List<Thompson>();
+        private List<Validacion_Lexema> lstLexamas = new List<Validacion_Lexema>();
 
         public AnalizarTokens(LinkedList<Token> listaTokens)
         {
@@ -20,6 +21,7 @@ namespace Compi1Proyevto1.Procesos
 
         public List<Conjunto> LstConjunto { get => lstConjunto; set => lstConjunto = value; } //Contendra la lista de conjuntos con su respectico ID
         public List<Thompson> LstThompson { get => lstThompson; set => lstThompson = value; }
+        public List<Validacion_Lexema> LstLexamas { get => lstLexamas; set => lstLexamas = value; }
 
         public void analizarTokens() {
             for (int i = 0; i < listaTokens.Count; i++)
@@ -89,6 +91,14 @@ namespace Compi1Proyevto1.Procesos
                             Transiciones transiciones = new Transiciones(thompson);
                             thompson.Transiciones = transiciones;
                             lstThompson.Add(thompson);
+                        }
+                        else if (listaTokens.ElementAt(i).TipoToken == Token.Tipo.DOS_PUNTOS)
+                        {
+                            i++;
+                            Validacion_Lexema validacion_Lexema = new Validacion_Lexema(listaTokens.ElementAt(i).Valor,nameEr,lstConjunto,LstThompson);
+                            
+                            LstLexamas.Add(validacion_Lexema);
+                            i++;
                         }
                         break;
                     default:

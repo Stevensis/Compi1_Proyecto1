@@ -121,6 +121,9 @@
   <data name="GuardarComo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GuardarComo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cerebro (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerebro (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="abrir-carpeta-con-documento (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>abrir-carpeta-con-documento (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,16 +133,28 @@
   <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="salvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>salvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="prueba (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prueba (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cerebro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerebro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Usa_Logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Usa_Logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tabla-de-datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tabla-de-datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="columna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\columna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pestanas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>pestanas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="prueba (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prueba (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="salvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>salvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="encuesta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\encuesta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

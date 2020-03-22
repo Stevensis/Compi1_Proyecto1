@@ -28,6 +28,7 @@ namespace Compi1Proyevto1.Procesos
         }
 
         public List<int> CerraduraI1 { get => CerraduraI; set => CerraduraI = value; }
+        public List<Estado> Tabla1 { get => Tabla; set => Tabla = value; }
 
         List<int> cerraduraX(int j) { //Metodo que va optener la cerradura inicial 
             List<int> resultado = new List<int>();
@@ -110,6 +111,7 @@ namespace Compi1Proyevto1.Procesos
             foreach (var item in thompson.Terminales)
             {
                 cadena += "<TD>\"" + item.Valor + "\"</TD> \n";
+                
             }
             cadena += "</TR> \n";
             foreach (var item in Tabla)
@@ -121,7 +123,7 @@ namespace Compi1Proyevto1.Procesos
                 }
                 else
                 {
-                    cadena += "<TD>" + item.Name + "</TD> \n";
+                    cadena += "<TD>" + item.Name  + "</TD> \n";
                 }
                 foreach (var item1 in item.Transicion)
                 {
@@ -133,7 +135,51 @@ namespace Compi1Proyevto1.Procesos
             return cadena;
         }
 
-        public Estado estadoExistente(List<int> comparar) {
+        public String dotTableC()
+        {
+            String cadena = "\n";
+            cadena += "size =\"30\";\n";
+            cadena += "node[ shape = none, fontname = \"Arial\" ]; \n";
+            cadena += "set1[ label=< \n";
+            cadena += "<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\" CELLPADDING=\"4\"> \n";
+            cadena += "<TR> \n";
+            cadena += "<TD>Estado</TD> \n";
+            foreach (var item in thompson.Terminales)
+            {
+                cadena += "<TD>\"" + item.Valor + "\"</TD> \n";
+
+            }
+            cadena += "</TR> \n";
+            foreach (var item in Tabla)
+            {
+                cadena += "<TR> \n";
+                if (item.Aceptacion)
+                {
+                    cadena += "<TD>" + item.Name + " C(" + String.Join(",", item.Cabezera) + ")={" + String.Join(",", item.Cerradura) + "} "+  "*</TD> \n";
+                }
+                else
+                {
+                    cadena += "<TD>" + item.Name + " C(" + String.Join(",", item.Cabezera) + ")={"+ String.Join(",", item.Cerradura)+"} " + "</TD> \n";
+                }
+                foreach (var item1 in item.Transicion)
+                {
+                    if (item1.Estado1.Name.Equals("--"))
+                    {
+                        cadena += "<TD>" + item1.Estado1.Name + "</TD> \n";
+                    }
+                    else
+                    {
+                        cadena += "<TD>" + item1.Estado1.Name + " C(" + String.Join(",", item1.Estado1.Cabezera) + ") " + "</TD> \n";
+                    }
+                    
+                }
+                cadena += "</TR> \n";
+            }
+            cadena += "</TABLE>>];";
+            return cadena;
+        }
+
+        public Estado estadoExistente(List<int> comparar) { //Nos indica si la cerradura que acabamos de crear ya existe
             Boolean existe = true;
             foreach (var item in Tabla)
             {

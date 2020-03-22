@@ -10,27 +10,26 @@ namespace Compi1Proyevto1.Archivos
 {
     class xml
     {
-        public void  Tokens(LinkedList<Token> ltokens) {
-            String XmlS = "";
+        public void  Tokens(List<Token> ltokens, String encabezado, String name) {
+            String XmlS = encabezado+"\n";
             XmlS += "<?xml version=\"1.0\"?>\n";
             XmlS += "<ListaTokens>\n";
             foreach (var item in ltokens)
             {
                 XmlS += "   <Token>\n";
-                XmlS += "       <Nombre>"+item.getTipo()+"</Nombre>\n";
+                XmlS += "       <Nombre>"+item.TipoTokenString+"</Nombre>\n";
                 XmlS += "       <Valor>"+item.Valor+"</Valor>\n";
                 XmlS += "       <Fila>"+item.Fila+"</Fila>\n";
                 XmlS += "       <Columna>"+item.Columna+"</Columna>\n";
                 XmlS += "   </Token>\n";
             }
             XmlS += "</ListaTokens>\n";
-            /*creando archivo xml*/
-            File.WriteAllText("Reporte Token.xml", XmlS);
-            System.Diagnostics.Process.Start("Reporte Token.xml");
+
+            File.AppendAllText(name + ".xml", XmlS);
         }
 
-        public void Errores(LinkedList<Error> lerrores) {
-            String XmlS = "";
+        public void Errores(List<Error> lerrores, String encabezado, String name) {
+            String XmlS = encabezado+"\n";
             XmlS += "<?xml version=\"1.0\"?>\n";
             XmlS += "<ListaErrores>\n";
             foreach (var item in lerrores)
@@ -43,9 +42,12 @@ namespace Compi1Proyevto1.Archivos
                 XmlS += "   </Error>\n";
             }
             XmlS += "</ListaErrores>\n";
+            File.AppendAllText(name + ".xml", XmlS);
             /*creando archivo xml*/
-            File.WriteAllText("Reporte Errores.xml", XmlS);
-            System.Diagnostics.Process.Start("Reporte Errores.xml");
+            //File.WriteAllText(name+".xml", XmlS);
+            //  File.WriteAllText(name + "name.pdf", XmlS);
+            //  System.Diagnostics.Process.Start("Reporte Errores.xml");
+         //   File.AppendAllText(name + ".pdf", XmlS);
         }
     }
 }

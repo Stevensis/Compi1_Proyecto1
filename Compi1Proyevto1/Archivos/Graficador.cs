@@ -24,8 +24,7 @@ namespace Compi1Proyevto1.Archivos
                 System.IO.File.WriteAllText(name+".dot", grafo.ToString());
             ProcessStartInfo startInfo = new ProcessStartInfo("dot.exe ");
             startInfo.Arguments = "-Tpng "+name+".dot -o "+name +".png ";
-            Process.Start(startInfo).WaitForExit();
-                
+            Process.Start(startInfo).WaitForExit();              
         }
         //contenido contiene las lineas
         public void graficar(String contenido, String name)

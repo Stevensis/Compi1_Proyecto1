@@ -73,6 +73,46 @@ namespace Compi1Proyevto1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerebro {
+            get {
+                object obj = ResourceManager.GetObject("cerebro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerebro__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cerebro (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap columna {
+            get {
+                object obj = ResourceManager.GetObject("columna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap encuesta {
+            get {
+                object obj = ResourceManager.GetObject("encuesta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guardar {
             get {
                 object obj = ResourceManager.GetObject("guardar", resourceCulture);
@@ -126,6 +166,16 @@ namespace Compi1Proyevto1.Properties {
         internal static System.Drawing.Bitmap salvar {
             get {
                 object obj = ResourceManager.GetObject("salvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tabla_de_datos {
+            get {
+                object obj = ResourceManager.GetObject("tabla-de-datos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

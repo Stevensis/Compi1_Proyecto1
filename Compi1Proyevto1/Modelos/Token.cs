@@ -42,6 +42,7 @@ namespace Compi1Proyevto1.Modelos
         }
         private Tipo tipoToken;
         private String valor; //El Contenido del token
+        private String tipoTokenString;
         private int contadorToken;
         private int fila;
         private int columna;
@@ -51,6 +52,7 @@ namespace Compi1Proyevto1.Modelos
         public int ContadorToken { get => contadorToken; set => contadorToken = value; }
         public int Fila { get => fila; set => fila = value; }
         public int Columna { get => columna; set => columna = value; }
+        public string TipoTokenString { get => tipoTokenString; set => tipoTokenString = value; }
 
         public String getTipo()
         {
@@ -125,6 +127,13 @@ namespace Compi1Proyevto1.Modelos
             this.columna = columna;
         }
 
-
+        public Token(string valor, string tipoTokenString, int contadorToken, int fila, int columna)
+        {
+            this.valor = valor;
+            this.tipoTokenString = tipoTokenString;
+            this.contadorToken = contadorToken;
+            this.fila = fila;
+            this.columna = columna;
+        }
     }
 }
