@@ -71,6 +71,7 @@ namespace Compi1Proyevto1
             this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
             btnRestore.Visible = true;
+            picktore.Size = new Size(1200, 1200);
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -78,6 +79,7 @@ namespace Compi1Proyevto1
             this.WindowState = FormWindowState.Normal;
             btnMaximizar.Visible = true;
             btnRestore.Visible = false;
+            picktore.Size = new Size(700, 700);
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -204,6 +206,7 @@ namespace Compi1Proyevto1
                     graficador.graficar(item.Transiciones.dotTableC(), item.NameEr + "-tableC");
                     File.WriteAllText(item.NameEr+ ".xml", "Reporete Tokens de la expresion regular: "+item.NameEr+" \n \n");
                     this.cbxExpresion.Items.Add(item.NameEr);
+                    this.cbxExpresion.SelectedIndex = 0;
                 }
                 
                 foreach (var item in analizarTK.LstLexamas)

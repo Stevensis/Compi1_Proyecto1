@@ -18,7 +18,12 @@ namespace Compi1Proyevto1.Archivos
             {
                 XmlS += "   <Token>\n";
                 XmlS += "       <Nombre>"+item.TipoTokenString+"</Nombre>\n";
-                XmlS += "       <Valor>"+item.Valor+"</Valor>\n";
+                String valor = item.Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
+                XmlS += "       <Valor>"+valor+"</Valor>\n";
                 XmlS += "       <Fila>"+item.Fila+"</Fila>\n";
                 XmlS += "       <Columna>"+item.Columna+"</Columna>\n";
                 XmlS += "   </Token>\n";
@@ -36,7 +41,12 @@ namespace Compi1Proyevto1.Archivos
             {
                 XmlS += "   <Error>\n";
                 XmlS += "       <descripcion>" + item.Descripcion + "</descripcion>\n";
-                XmlS += "       <Valor>" + item.Valor + "</Valor>\n";
+                String valor = item.Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
+                XmlS += "       <Valor>" + valor + "</Valor>\n";
                 XmlS += "       <Fila>" + item.Fila + "</Fila>\n";
                 XmlS += "       <Columna>" + item.Columna + "</Columna>\n";
                 XmlS += "   </Error>\n";

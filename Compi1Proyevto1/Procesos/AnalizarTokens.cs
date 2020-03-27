@@ -62,6 +62,16 @@ namespace Compi1Proyevto1.Procesos
                                 } while (listaTokens.ElementAt(i).TipoToken != Token.Tipo.PUNTO_Y_C);
                                 conjunto.Conjuntoo=lstChar;
                             }
+                            else if (listaTokens.ElementAt(i).TipoToken==Token.Tipo.DOS_PUNTOS)
+                            {
+                                i++;
+                                List<char> lstChar = new List<char>();
+                                for (int j = 32; j < 127; j++)
+                                {
+                                    lstChar.Add((char) j);
+                                }
+                                conjunto.Conjuntoo = lstChar;
+                            }
                             lstConjunto.Add(conjunto);
                         }
                         break;

@@ -38,7 +38,12 @@ namespace Compi1Proyevto1.Modelos
             DOS_PUNTOS,
             SIGNO,
             NUMERAL,
-            EPSILON
+            EPSILON,
+            SALTO_LINEA,
+            TABULACION,
+            COMILLA_DOBLE,
+            COMILLA_SIMPLE,
+            
         }
         private Tipo tipoToken;
         private String valor; //El Contenido del token
@@ -112,6 +117,14 @@ namespace Compi1Proyevto1.Modelos
                     return "NUMERO_ENTERO";
                 case Tipo.EPSILON:
                     return "EPSILON";
+                case Tipo.COMILLA_SIMPLE:
+                    return "COMILLA SIMPLE";
+                case Tipo.COMILLA_DOBLE:
+                    return "COMILLA DOBLE";
+                case Tipo.SALTO_LINEA:
+                    return "SALTO DE LINEA";
+                case Tipo.TABULACION:
+                    return "TABULACION";
                 default:
                     return "";
                 

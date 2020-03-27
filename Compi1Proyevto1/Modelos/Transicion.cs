@@ -16,6 +16,7 @@ namespace Compi1Proyevto1.Modelos
             this.state_from = state_from;
             this.state_to = state_to;
             this.trans_symbol = trans_symbol;
+
         }
 
         public int State_from { get => state_from; set => state_from = value; }

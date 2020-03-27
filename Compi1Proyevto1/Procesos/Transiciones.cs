@@ -110,7 +110,12 @@ namespace Compi1Proyevto1.Procesos
             cadena += "<TD>Estado</TD> \n";
             foreach (var item in thompson.Terminales)
             {
-                cadena += "<TD>\"" + item.Valor + "\"</TD> \n";
+                String valor = item.Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
+                cadena += "<TD>\"" + valor + "\"</TD> \n";
                 
             }
             cadena += "</TR> \n";
@@ -146,7 +151,12 @@ namespace Compi1Proyevto1.Procesos
             cadena += "<TD>Estado</TD> \n";
             foreach (var item in thompson.Terminales)
             {
-                cadena += "<TD>\"" + item.Valor + "\"</TD> \n";
+                String valor = item.Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
+                cadena += "<TD>\"" + valor + "\"</TD> \n";
 
             }
             cadena += "</TR> \n";
@@ -221,9 +231,13 @@ namespace Compi1Proyevto1.Procesos
             {
                 foreach (var item2 in item.Transicion)
                 {
-                    if (!item2.Estado1.Name.Equals("--"))
-                    {
-                        cadena += item.Name + " -> " + item2.Estado1.Name + " [label=\"\\\"" + item2.Terminal.Valor + "\\\"\"];" + "\n";
+                    if (!item2.Estado1.Name.Equals("--")) { 
+                    String valor = item2.Terminal.Valor;
+                    valor = valor.Replace("\n", "/n");
+                    valor = valor.Replace("\t", "/t");
+                    valor = valor.Replace("\r", "/r");
+                    valor = valor.Replace("\"", "\\\"");
+                    cadena += item.Name + " -> " + item2.Estado1.Name + " [label=\"\\\"" + valor + "\\\"\"];" + "\n";
                     }
                     
                 }

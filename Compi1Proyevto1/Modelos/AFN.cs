@@ -56,8 +56,13 @@ namespace Compi1Proyevto1.Modelos
             cadena += "rankdir=LR;";
             foreach (var item in transiciones)
              {
-                 cadena += item.State_from + " [shape=\"circle\"]\n";
-                 cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ item.Trans_symbol.Valor + "\\\"\"];" + "\n";
+                String valor = item.Trans_symbol.Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
+                cadena += item.State_from + " [shape=\"circle\"]\n";
+                 cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ valor + "\\\"\"];" + "\n";
             }
 
             cadena += estados.Count() - 1 + " [shape=\"doublecircle\"]";

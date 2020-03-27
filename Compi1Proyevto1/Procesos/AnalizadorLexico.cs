@@ -37,6 +37,7 @@ namespace Compi1Proyevto1.Procesos
                         else if (c == '/') { aux += c; estado = 2; } // Si viene / es un comienzo de comentario
                         else if (c == '<') { aux += c; estado = 4; } // Si viene < es un comienzo de comentario multi linea
                         else if (c == '"') { estado = 7; } //Comienzo de una cadena
+                        else if (c=='\\')  { estado = 8; }
                         else if (c == '%') { aux += c; agregarTk(Token.Tipo.PORCENTAJE); }
                         else if (c == '-') { aux += c; agregarTk(Token.Tipo.MENOS); }
                         else if (c == '>') { aux += c; agregarTk(Token.Tipo.MAYORQUE); }
@@ -88,11 +89,20 @@ namespace Compi1Proyevto1.Procesos
                         else { aux += c; estado = 5; }
                         break;
                     case 7:
-                        if (c == '"') { agregarTk(Token.Tipo.CADENA); }
+                        /*  asdas***asdasdasd */
+                        if (c == '"') { aux = aux.Replace("\\n", "\n");
+                            aux = aux.Replace("\\t", "\t");
+                            aux = aux.Replace("\\r", "\r");
+                            aux = aux.Replace("\\\"", "\""); agregarTk(Token.Tipo.CADENA); }
                         else { aux += c; estado = 7; }
+                        break;
+                    case 8:
+                        if (c == 'n') { aux = "\n"; agregarTk(Token.Tipo.SALTO_LINEA); }
+                        else if (c=='t') { aux = "\t"; agregarTk(Token.Tipo.TABULACION); }
                         break;
                     default:
                         break;
+                    
                 }
             }
             return ListTk;
