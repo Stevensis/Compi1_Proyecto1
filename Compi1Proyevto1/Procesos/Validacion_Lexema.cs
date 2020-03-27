@@ -70,12 +70,21 @@ namespace Compi1Proyevto1.Procesos
                             case Token.Tipo.CADENA:
                                 String temp = "" + c;
                                 int contador = i;
-                                for (int j = 1; j < item.Terminal.Valor.Length; j++)
+                                Boolean g = true;
+                                try
                                 {
-                                    contador++;
-                                    temp += cadena.ElementAt(contador);
+                                    for (int j = 1; j < item.Terminal.Valor.Length; j++)
+                                    {
+                                        contador++;
+                                        temp += cadena.ElementAt(contador);
+                                    }
                                 }
-                                if (item.Terminal.Valor.Equals(temp))
+                                catch (Exception)
+                                {
+                                    g = false;
+                                }
+                               
+                                if (item.Terminal.Valor.Equals(temp) && g)
                                 {
                                     i += item.Terminal.Valor.Length - 1;
                                     estadoActual = item.Estado1;

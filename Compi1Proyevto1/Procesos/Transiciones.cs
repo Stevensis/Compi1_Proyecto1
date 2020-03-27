@@ -11,6 +11,7 @@ namespace Compi1Proyevto1.Procesos
     {
         Thompson thompson;
         private List<int> CerraduraI; //Guardara la cerradura inicial
+        private List<int> tempC = new List<int>();
         private List<Estado> Tabla; //Conotendra la tabla de estados
         private Queue<Estado> colaEstados = new Queue<Estado>();   
         public Transiciones(Thompson thompson)
@@ -19,6 +20,7 @@ namespace Compi1Proyevto1.Procesos
             this.thompson = thompson;
             List<int> cabezera = new List<int>();
             cabezera.Add(0);
+            tempC.Clear();
             CerraduraI = cerraduraX(0);
             CerraduraI.Sort();
             Tabla.Add(new Estado(CerraduraI,"A",cabezera)); //CREAMOS  el primer estado
@@ -32,14 +34,21 @@ namespace Compi1Proyevto1.Procesos
 
         List<int> cerraduraX(int j) { //Metodo que va optener la cerradura inicial 
             List<int> resultado = new List<int>();
-            resultado.Add(j); //Todos tienen una transicion con epsilon con ellos mismos
-            foreach (var item in thompson.Raiz.Transiciones)
+            if ( !tempC.Contains(j))
             {
-                if (item.Trans_symbol.TipoToken == Token.Tipo.EPSILON && item.State_from==j)
+                resultado.Add(j); //Todos tienen una transicion con epsilon con ellos mismos
+                tempC.Add(j);
+                foreach (var item in thompson.Raiz.Transiciones)
                 {
-                    resultado.AddRange(cerraduraX(item.State_to)); //Cada estado alcanzable con Epsilon
+                    if (item.Trans_symbol.TipoToken == Token.Tipo.EPSILON && item.State_from == j)
+                    {
+                        List<int> auxiliar = cerraduraX(item.State_to);
+                        tempC.AddRange(auxiliar);
+                        resultado.AddRange(auxiliar); //Cada estado alcanzable con Epsilon
+                    }
                 }
             }
+            
             return resultado;
         }
 
@@ -71,6 +80,7 @@ namespace Compi1Proyevto1.Procesos
                         List<int> cerraduraTemp = new List<int>();
                         foreach (var o in ter)
                         {
+                            tempC.Clear();
                             cerraduraTemp.AddRange(cerraduraX(o));
                         }
                         cerraduraTemp.Sort();
