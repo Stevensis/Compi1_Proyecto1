@@ -99,6 +99,7 @@ namespace Compi1Proyevto1.Procesos
                     case 8:
                         if (c == 'n') { aux = "\n"; agregarTk(Token.Tipo.SALTO_LINEA); }
                         else if (c=='t') { aux = "\t"; agregarTk(Token.Tipo.TABULACION); }
+                        else if (c == '"') { aux = "\""; agregarTk(Token.Tipo.COMILLA_DOBLE); }
                         break;
                     default:
                         break;
