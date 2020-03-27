@@ -1,0 +1,46 @@
+Reporete Tokens de la expresion regular: ExpresionLIGERA 
+ 
+ Tokens de lexema "GUATEMALACOVIDjeje" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>GUATEMALA</Nombre>
+       <Valor>GUATEMALA</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>COVID</Nombre>
+       <Valor>COVID</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>jeje</Nombre>
+       <Valor>jeje</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "GUATEMALACOVIDjeje" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "GUATECOVIDab1" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+</ListaTokens>
+ Errores de lexema "GUATECOVIDab1" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+   <Error>
+       <descripcion>Del estado: A no se puede alcanzar otro estado con este caracter</descripcion>
+       <Valor>G</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Error>
+</ListaErrores>

@@ -94,12 +94,16 @@ namespace Compi1Proyevto1.Procesos
                             aux = aux.Replace("\\t", "\t");
                             aux = aux.Replace("\\r", "\r");
                             aux = aux.Replace("\\\"", "\""); agregarTk(Token.Tipo.CADENA); }
+                        else if(c=='\\') { aux += c; estado = 9; }
                         else { aux += c; estado = 7; }
                         break;
                     case 8:
                         if (c == 'n') { aux = "\n"; agregarTk(Token.Tipo.SALTO_LINEA); }
                         else if (c=='t') { aux = "\t"; agregarTk(Token.Tipo.TABULACION); }
                         else if (c == '"') { aux = "\""; agregarTk(Token.Tipo.COMILLA_DOBLE); }
+                        break;
+                    case 9:
+                          aux += c; estado = 7;                          
                         break;
                     default:
                         break;

@@ -60,7 +60,7 @@ namespace Compi1Proyevto1.Modelos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 cadena += item.State_from + " [shape=\"circle\"]\n";
                  cadena += item.State_from + " -> "+ item.State_to + " [label=\"\\\""+ valor + "\\\"\"];" + "\n";
             }

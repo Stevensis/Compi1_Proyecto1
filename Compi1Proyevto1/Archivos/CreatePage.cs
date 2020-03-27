@@ -43,7 +43,7 @@ namespace Compi1Proyevto1.Archivos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 page += "<tr>\n"
                         + "<th scope=\"row\">"
                         + lstToken.ElementAt(i).ContadorToken

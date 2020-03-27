@@ -22,7 +22,7 @@ namespace Compi1Proyevto1.Archivos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 XmlS += "       <Valor>"+valor+"</Valor>\n";
                 XmlS += "       <Fila>"+item.Fila+"</Fila>\n";
                 XmlS += "       <Columna>"+item.Columna+"</Columna>\n";
@@ -45,7 +45,7 @@ namespace Compi1Proyevto1.Archivos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 XmlS += "       <Valor>" + valor + "</Valor>\n";
                 XmlS += "       <Fila>" + item.Fila + "</Fila>\n";
                 XmlS += "       <Columna>" + item.Columna + "</Columna>\n";

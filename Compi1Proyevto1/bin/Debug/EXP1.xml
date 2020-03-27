@@ -1,0 +1,330 @@
+Reporete Tokens de la expresion regular: EXP1 
+ 
+ Tokens de lexema "#3C2E2E" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>3</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>C</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>E</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>E</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#3C2E2E" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "#520A0A" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>5</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>0</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>A</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>0</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>A</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#520A0A" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "#D88888" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>D</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#D88888" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "#41DA90" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>4</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>1</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>D</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>A</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>9</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>0</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#41DA90" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "#591224" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>5</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>9</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>1</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>4</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#591224" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "#BEB6B8" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+   <Token>
+       <Nombre>#</Nombre>
+       <Valor>#</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>B</Valor>
+       <Fila>0</Fila>
+       <Columna>2</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>E</Valor>
+       <Fila>0</Fila>
+       <Columna>3</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>B</Valor>
+       <Fila>0</Fila>
+       <Columna>4</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>6</Valor>
+       <Fila>0</Fila>
+       <Columna>5</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto LETRAS</Nombre>
+       <Valor>B</Valor>
+       <Fila>0</Fila>
+       <Columna>6</Columna>
+   </Token>
+   <Token>
+       <Nombre>Conjunto digitos</Nombre>
+       <Valor>8</Valor>
+       <Fila>0</Fila>
+       <Columna>7</Columna>
+   </Token>
+</ListaTokens>
+ Errores de lexema "#BEB6B8" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+</ListaErrores>
+ Tokens de lexema "2#143EA" 
+
+<?xml version="1.0"?>
+<ListaTokens>
+</ListaTokens>
+ Errores de lexema "2#143EA" 
+
+<?xml version="1.0"?>
+<ListaErrores>
+   <Error>
+       <descripcion>Del estado: A no se puede alcanzar otro estado con este caracter</descripcion>
+       <Valor>2</Valor>
+       <Fila>0</Fila>
+       <Columna>1</Columna>
+   </Error>
+</ListaErrores>

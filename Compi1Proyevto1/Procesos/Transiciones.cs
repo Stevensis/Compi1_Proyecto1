@@ -114,7 +114,7 @@ namespace Compi1Proyevto1.Procesos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 cadena += "<TD>\"" + valor + "\"</TD> \n";
                 
             }
@@ -155,7 +155,7 @@ namespace Compi1Proyevto1.Procesos
                 valor = valor.Replace("\n", "/n");
                 valor = valor.Replace("\t", "/t");
                 valor = valor.Replace("\r", "/r");
-                valor = valor.Replace("\"", "\\\"");
+                valor = valor.Replace("\"", "ComillaD");
                 cadena += "<TD>\"" + valor + "\"</TD> \n";
 
             }
@@ -236,7 +236,7 @@ namespace Compi1Proyevto1.Procesos
                     valor = valor.Replace("\n", "/n");
                     valor = valor.Replace("\t", "/t");
                     valor = valor.Replace("\r", "/r");
-                    valor = valor.Replace("\"", "\\\"");
+                    valor = valor.Replace("\"", "ComillaD");
                     cadena += item.Name + " -> " + item2.Estado1.Name + " [label=\"\\\"" + valor + "\\\"\"];" + "\n";
                     }
                     
