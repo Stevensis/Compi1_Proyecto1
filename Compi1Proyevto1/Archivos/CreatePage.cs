@@ -39,12 +39,17 @@ namespace Compi1Proyevto1.Archivos
             + "<tbody>\n";
             for (int i = 0; i < lstToken.Count(); i++)
             {
+                String valor = lstToken.ElementAt(i).Valor;
+                valor = valor.Replace("\n", "/n");
+                valor = valor.Replace("\t", "/t");
+                valor = valor.Replace("\r", "/r");
+                valor = valor.Replace("\"", "\\\"");
                 page += "<tr>\n"
                         + "<th scope=\"row\">"
                         + lstToken.ElementAt(i).ContadorToken
                         + "</th>\n"
                         + "<td>\n"
-                        + lstToken.ElementAt(i).Valor
+                        + valor
                         + "\n</td\n>"
                         + "<td>\n"
                         + lstToken.ElementAt(i).getTipo()
